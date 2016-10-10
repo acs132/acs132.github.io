@@ -167,16 +167,15 @@ random.randrange(10, 100, 2)在结果上与 random.choice(range(10, 100, 2) 等�
 
 random.choice(sequence) 参数sequence表示一个有序类型。sequence在python不是一种特定的类型，而是泛指一系列的类型。list, tuple, 字符串都属于sequence。
 </code></pre><blockquote>
-<p>print random.choice(“学习Python”)<br>  print random.choice([“JGood”, “is”, “a”, “handsome”, “boy”]) </p>
+<p>>&gt;print random.choice(“学习Python”)<br>  >&gt;print random.choice([“JGood”, “is”, “a”, “handsome”, “boy”]) </p>
 </blockquote>
 <pre><code>random.shuffle(x[, random])     用于将一个列表中的元素打乱
 </code></pre><blockquote>
-<p>p = [“Python”, “is”, “powerful”, “simple”, “and so on…”]<br>  random.shuffle(p)   </p>
-<h1 id="‘and-so-on…’-‘is’-‘Python’-‘powerful’-‘simple’"><a href="#‘and-so-on…’-‘is’-‘Python’-‘powerful’-‘simple’" class="headerlink" title="[‘and so on…’, ‘is’, ‘Python’, ‘powerful’, ‘simple’]"></a>[‘and so on…’, ‘is’, ‘Python’, ‘powerful’, ‘simple’]</h1></blockquote>
+<p>>&gt;p = [“Python”, “is”, “powerful”, “simple”, “and so on…”]<br>  >&gt;random.shuffle(p)<br>  [‘and so on…’, ‘is’, ‘Python’, ‘powerful’, ‘simple’]</p>
+</blockquote>
 <pre><code>random.sample(sequence, k)      从指定序列中随机获取指定长度的片断。sample函数不会修改原有序列。
 </code></pre><blockquote>
-<p>list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]<br>  random.sample(list, 5)</p>
-<h1 id="9-4-5-8-1"><a href="#9-4-5-8-1" class="headerlink" title="[9, 4, 5, 8, 1]"></a>[9, 4, 5, 8, 1]</h1><p>  #从list中随机获取5个元素，作为一个片断返回</p>
+<p>>&gt;list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]<br>  >&gt;random.sample(list, 5)<br>  [9, 4, 5, 8, 1]<br>  #从list中随机获取5个元素，作为一个片断返回</p>
 </blockquote>
 
       
