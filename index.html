@@ -74,7 +74,7 @@
 				
 					<a class="github" target="_blank" href="#" title="github">github</a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					<a class="weibo" target="_blank" href="http://weibo.com/acs132" title="weibo">weibo</a>
 		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
 		        
@@ -115,7 +115,7 @@
 					
 						<a class="github" target="_blank" href="#" title="github">github</a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+						<a class="weibo" target="_blank" href="http://weibo.com/acs132" title="weibo">weibo</a>
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
 			        
@@ -127,6 +127,82 @@
 
       <div class="body-wrap">
         
+  
+    <article id="post-docker常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/11/docker常用命令/">docker常用命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="centos6-install-docker"><a href="#centos6-install-docker" class="headerlink" title="centos6 install docker"></a>centos6 install docker</h3><pre><code>rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum -y update
+</code></pre><blockquote>
+<p>Install</p>
+</blockquote>
+<pre><code>yum -y install docker-io
+chkconfig docker start
+</code></pre><h3 id="docker常用命令"><a href="#docker常用命令" class="headerlink" title="docker常用命令"></a>docker常用命令</h3><pre><code>#docker下载镜像
+docker pull centos  
+
+#docker重命令镜像
+docker tag [IMAGE ID] name  
+
+#启动docker
+docker run -it -d -p 80:80 shadowsocks -v /data/toughradius/:/var/toughradius/
+
+#进入正在运行的docker
+docker exec -i -t fdf34493264e /bin/bash
+
+#停止docker
+docker stop fdf34493264e
+
+#docker开机自动启动(always:始终重启)
+docker run -i -t -d -p 1080:1080 --restart=always shadowsocks 
+
+#保存对容器的修改，对某一个容器做了修改之后，可以把容器的修改保存下来，下次可以从保存后的最新状态运行该容器，它保存新旧状态之间的区别，从而产生一个新的docker镜像
+dcoker commit fdf34493264e shadowsocks
+</code></pre>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/11/docker常用命令/" class="archive-article-date">
+  	<time datetime="2016-10-11T05:40:46.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-11</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+    
+
   
     <article id="post-Python模块：生成随机数模块random" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -259,7 +335,7 @@ random.choice(sequence) 参数sequence表示一个有序类型。sequence在pyth
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/pyhton/" style="font-size: 10px;">pyhton</a>
+    				<a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/pyhton/" style="font-size: 10px;">pyhton</a>
     			</div>
     	</section>
     
