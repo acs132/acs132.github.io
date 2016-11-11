@@ -4,14 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>超人不会飞</title>
+  <title>Elasticsearch | 超人不会飞</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="超人不会飞">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="###ES与mysql数据同步将Mysql中的数据导入到ES，并保持同步，有两种方案1.go-mysql-elasticsearch这个一个开源项目，这个插件支持实时同步Mysql与ES的新增、修改及删除操作。缺点是使用起来不够灵活，不能运行时修改表结构。2.elasticsearch-jdbc可以灵活地进行数据同步，比如可以在同步的时候指定需要同步的字段以及筛选条件。是比较流行的解决方案，但它有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Elasticsearch">
+<meta property="og:url" content="http://yoursite.com/2016/11/11/Elasticsearch/index.html">
 <meta property="og:site_name" content="超人不会飞">
+<meta property="og:description" content="###ES与mysql数据同步将Mysql中的数据导入到ES，并保持同步，有两种方案1.go-mysql-elasticsearch这个一个开源项目，这个插件支持实时同步Mysql与ES的新增、修改及删除操作。缺点是使用起来不够灵活，不能运行时修改表结构。2.elasticsearch-jdbc可以灵活地进行数据同步，比如可以在同步的时候指定需要同步的字段以及筛选条件。是比较流行的解决方案，但它有">
+<meta property="og:updated_time" content="2016-11-11T08:02:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="超人不会飞">
+<meta name="twitter:title" content="Elasticsearch">
+<meta name="twitter:description" content="###ES与mysql数据同步将Mysql中的数据导入到ES，并保持同步，有两种方案1.go-mysql-elasticsearch这个一个开源项目，这个插件支持实时同步Mysql与ES的新增、修改及删除操作。缺点是使用起来不够灵活，不能运行时修改表结构。2.elasticsearch-jdbc可以灵活地进行数据同步，比如可以在同步的时候指定需要同步的字段以及筛选条件。是比较流行的解决方案，但它有">
   
     <link rel="alternative" href="/atom.xml" title="超人不会飞" type="application/atom+xml">
   
@@ -130,9 +134,7 @@
 </nav>
 
       <div class="body-wrap">
-        
-  
-    <article id="jdbc-Elasticsearch" class="article article-type-jdbc" itemscope itemprop="blogPost">
+        <article id="jdbc-Elasticsearch" class="article article-type-jdbc" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -141,8 +143,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/11/Elasticsearch/">Elasticsearch</a>
+    <h1 class="article-title" itemprop="name">
+      Elasticsearch
     </h1>
   
 
@@ -236,166 +238,65 @@ unzip elasticsearch-jdbc-2.3.4.1-dist.zip
   </div>
 </article>
 
-
-
-
-
-
-
-
-    
-
   
-    <article id="post-docker常用命令" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/11/docker常用命令/">docker常用命令</a>
-    </h1>
   
+    <a href="/2016/10/11/docker常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">docker常用命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="centos6-install-docker"><a href="#centos6-install-docker" class="headerlink" title="centos6 install docker"></a>centos6 install docker</h3><pre><code>rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-yum -y update
-</code></pre><blockquote>
-<p>Install</p>
-</blockquote>
-<pre><code>yum -y install docker-io
-chkconfig docker start
-</code></pre><h3 id="docker常用命令"><a href="#docker常用命令" class="headerlink" title="docker常用命令"></a>docker常用命令</h3><pre><code>#docker下载镜像
-docker pull centos  
 
-#docker重命令镜像
-docker tag [IMAGE ID] name  
 
-#启动docker
-docker run -it -d -p 80:80 shadowsocks -v /data/toughradius/:/var/toughradius/
 
-#进入正在运行的docker
-docker exec -i -t fdf34493264e /bin/bash
-
-#停止docker
-docker stop fdf34493264e
-
-#docker开机自动启动(always:始终重启)
-docker run -i -t -d -p 1080:1080 --restart=always shadowsocks 
-
-#保存对容器的修改，对某一个容器做了修改之后，可以把容器的修改保存下来，下次可以从保存后的最新状态运行该容器，它保存新旧状态之间的区别，从而产生一个新的docker镜像
-dcoker commit fdf34493264e shadowsocks
-</code></pre>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/11/docker常用命令/" class="archive-article-date">
-  	<time datetime="2016-10-11T05:40:46.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-11</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
 
 
 
-
-
-    
-
-  
-    <article id="post-Python模块：生成随机数模块random" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/10/Python模块：生成随机数模块random/">Python模块：生成随机数模块random</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><pre><code>random实现了对各种分布的伪随机数发生器。
-对于整数，统一从一系列的选择。对于序列，统一选择一个随机的元素、 一个函数来生成一个列表的地方，一个随机排列和功能的不重置抽样。
-</code></pre><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre><code>import random
-random.random()     随机返回[0.0, 1]之间的浮点数
-random.uniform(a, b)    随机返回[a, b]之间的浮点数
-random.randint(a, b)    随机返回[a,b]之间的整数
-random.randrange([start], stop[, step])     从指定范围内，按指定基数递增
-集合中 获取一个随机数。如：random.randrange(10, 100, 2)，结果相当于从[10, 12, 14, 16, ... 96, 98]序列中获取一个随机数。
-
-random.randrange(10, 100, 2)在结果上与 random.choice(range(10, 100, 2) 等效。
-
-random.choice(sequence) 参数sequence表示一个有序类型。sequence在python不是一种特定的类型，而是泛指一系列的类型。list, tuple, 字符串都属于sequence。
-</code></pre><blockquote>
-<p>>&gt;print random.choice(“学习Python”)<br>  >&gt;print random.choice([“JGood”, “is”, “a”, “handsome”, “boy”]) </p>
-</blockquote>
-<pre><code>random.shuffle(x[, random])     用于将一个列表中的元素打乱
-</code></pre><blockquote>
-<p>>&gt;p = [“Python”, “is”, “powerful”, “simple”, “and so on…”]<br>  >&gt;random.shuffle(p)<br>  [‘and so on…’, ‘is’, ‘Python’, ‘powerful’, ‘simple’]</p>
-</blockquote>
-<pre><code>random.sample(sequence, k)      从指定序列中随机获取指定长度的片断。sample函数不会修改原有序列。
-</code></pre><blockquote>
-<p>>&gt;list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]<br>  >&gt;random.sample(list, 5)<br>  [9, 4, 5, 8, 1]<br>  #从list中随机获取5个元素，作为一个片断返回</p>
-</blockquote>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/10/Python模块：生成随机数模块random/" class="archive-article-date">
-  	<time datetime="2016-10-10T07:02:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-10</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pyhton/">pyhton</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Elasticsearch" data-title="Elasticsearch" data-url="http://yoursite.com/2016/11/11/Elasticsearch/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"acs132"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
     
-
-  
-  
-
 
       </div>
       <footer id="footer">
@@ -416,8 +317,8 @@ random.choice(sequence) 参数sequence表示一个有序类型。sequence在pyth
 		fancybox: true,
 		mathjax: false,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
