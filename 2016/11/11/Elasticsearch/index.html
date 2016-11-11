@@ -12,10 +12,12 @@
 <meta property="og:url" content="http://yoursite.com/2016/11/11/Elasticsearch/index.html">
 <meta property="og:site_name" content="超人不会飞">
 <meta property="og:description" content="###ES与mysql数据同步将Mysql中的数据导入到ES，并保持同步，有两种方案1.go-mysql-elasticsearch这个一个开源项目，这个插件支持实时同步Mysql与ES的新增、修改及删除操作。缺点是使用起来不够灵活，不能运行时修改表结构。2.elasticsearch-jdbc可以灵活地进行数据同步，比如可以在同步的时候指定需要同步的字段以及筛选条件。是比较流行的解决方案，但它有">
-<meta property="og:updated_time" content="2016-11-11T08:16:46.000Z">
+<meta property="og:image" content="http://yoursite.com/images/es-jdbc.png">
+<meta property="og:updated_time" content="2016-11-11T08:51:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JDBC plugin for Elasticsearch">
 <meta name="twitter:description" content="###ES与mysql数据同步将Mysql中的数据导入到ES，并保持同步，有两种方案1.go-mysql-elasticsearch这个一个开源项目，这个插件支持实时同步Mysql与ES的新增、修改及删除操作。缺点是使用起来不够灵活，不能运行时修改表结构。2.elasticsearch-jdbc可以灵活地进行数据同步，比如可以在同步的时候指定需要同步的字段以及筛选条件。是比较流行的解决方案，但它有">
+<meta name="twitter:image" content="http://yoursite.com/images/es-jdbc.png">
   
     <link rel="alternative" href="/atom.xml" title="超人不会飞" type="application/atom+xml">
   
@@ -219,7 +221,7 @@ unzip elasticsearch-jdbc-2.3.4.1-dist.zip
     }
   }
 }
-</code></pre><p>2.索引中包含内容索引，mysql查询时应该写成dt_at as \”flows.no_dt_at\” 其实flows为内部type名。结果如图<br></p>
+</code></pre><p>2.索引中包含内容索引，mysql查询时应该写成dt_at as \”flows.no_dt_at\” 其实flows为内部type名。结果如图<br><img src="/images/es-jdbc.png" alt="es-jdbc"></p>
 <p>###常用介绍<br>select <em> from table可以查询表，查询从数据库选择数据的简单变体。他们转储表成elasticsearch逐行。如果没有_id列名，ID将自动生成<br>id as _id 这样的话可以增量同步，_id是es的默认id命名<br>“interval”:”1800”, 这里是同步数据的频率 1800s，半小时，可以按需要设成 1s或其它<br>“schedule” : “0 0/60 0-23 ? </em> *”,   同步数据任务  60分钟一次<br>“flush_interval” : “5s”,    刷新间隔为5S<br>sql.parameter——绑定SQL语句参数(按顺序)。 可以使用一些特殊的值具有以下含义:<br>    $now——当前时间戳<br>    $state——国家之一:BEFORE_FETCH,取回,AFTER_FETCH,无所事事,例外<br>    $metrics.counter——一个计数器<br>    $lastrowcount——从最后一条语句的行数<br>    $lastexceptiondate- SQL时间戳的例外<br>    $lastexception——完整的堆栈跟踪的例外<br>    $metrics.lastexecutionstart——最后一次执行SQL时间戳的时候开始<br>    $metrics.lastexecutionend- SQL时间戳的时候最后一次执行结束<br>    $metrics.totalrows——总获取的行数<br>    $metrics.totalbytes——获取的字节总数<br>    $metrics.failed——失败的SQL执行的总数<br>    $metrics.succeeded</p>
 <p>###参数名介绍<br>locale默认语言环境(用于解析数值,浮点的性格。 推荐的值是“en_US”)<br>timezone——JDBC的时区setTimestamp()调用绑定参数时的时间戳值<br>rounding——舍入模式解析数值。 可能的值“天花板”,“下”,“地板”,“halfdown”、“halfeven”,“halfup”、“不必要的”,“上”<br>scale——解析数值的精度<br>autocommit- - - - - -true如果每个语句应该被自动执行。 默认是false<br>fetchsize——fetchsize大型结果集,大多数司机使用这个控制行缓冲的数量而遍历结果集<br>max_rows——声明限制获取的行数,其余的行被忽略<br>max_retries——重试的次数(重新)连接到一个数据库<br>max_retries_wait——时间价值的时间应重试之间等。<br>resultset_type- JDBC结果集类型,可以TYPE_FORWARD_ONLY TYPE_SCROLL_SENSITIVE TYPE_SCROLL_INSENSITIVE。 默认是TYPE_FORWARD_ONLY<br>resultset_concurrency- JDBC结果集并发性,可以CONCUR_READ_ONLY CONCUR_UPDATABLE。 默认是CONCUR_UPDATABLE<br>ignore_null_values——如果NULL值构建JSON文档时应该被忽略。 默认是false<br>detect_geo——如果geo多边形/分在SQL列构造时应解析JSON文档。 默认是true<br>detect_json——如果json结构构建json文档时应该解析SQL列。 默认是true<br>prepare_database_metadata——如果司机元数据作为参数要准备好。 默认是false<br>prepare_resultset_metadata——如果结果集元数据应该准备作为参数。 默认是false<br>column_name_map——地图的别名应该用作替代数据库的列名称。 对于Oracle 30 char列名称限制。 默认是null<br>query_timeout——第二个价值多长时间允许SQL语句被执行之前被认为是输了。 默认是1800<br>connection_properties——地图的连接属性用于创建驱动程序连接。 默认是null<br>schedule——一个单一的或cron表达式列表计划执行。 语法是相当于 石英cron表达式格式语法(见下文)<br>threadpoolsize——计划执行的线程池的大小schedule参数。 如果设置为1,所有工作将连续执行。 默认是4。<br>interval——两个运行之间的延迟时间值(默认值:不设置)<br>elasticsearch.cluster——Elasticsearch集群名称<br>elasticsearch.host——一系列Elasticsearch主机(主机名或规范host:port)<br>elasticsearch.port——Elasticsearch主机<br>elasticsearch.autodiscover——如果true、JDBC进口国将尝试连接到所有集群节点。 默认是false<br>max_bulk_actions每个批量索引请求提交的长度(默认值:10000)<br>max_concurrrent_bulk_requests并发大量请求的最大数量(默认值:2 * CPU核的数量)<br>max_bulk_volume——一个字节大小参数允许的最大体积的大部分请求(默认值:10米)<br>max_request_wait——时间价值的最大等待时间响应大部分请求<br>flush_interval——时间价值区间段冲洗索引文档批量操作(默认值:“5 s”)<br>index——Elasticsearch指数用于索引<br>type——Elasticsearch用于索引的索引类型<br>index_settings-可选设置Elasticsearch指数<br>type_mapping-可选为Elasticsearch指数类型映射<br>statefile——文件的名称JDBC进口国读写状态信息<br>metrics.lastexecutionstart——开始的UTC日期/时间的最后一次执行一个获取<br>metrics.lastexecutionend——最后的UTC日期/时间的最后一次执行一个获取<br>metrics.counter——一个计数器度量,将每一个获取后增加<br>metrics.enabled——如果true启用日志记录,指标。 默认是false<br>metrics.interval——度量日志之间的时间间隔。 默认是30秒。<br>metrics.logger.plain——如果true纯文本格式的日志消息,写指标。 默认是false<br>metrics.logger.json——如果true、写度量JSON格式的日志消息。 默认是false</p>
 
