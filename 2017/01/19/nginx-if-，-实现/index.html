@@ -4,14 +4,27 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: docker | 超人不会飞</title>
+  <title>nginx:if(&amp;&amp;，||)实现 | 超人不会飞</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="超人不会飞">
-<meta property="og:url" content="http://yoursite.com/tags/docker/index.html">
+  <meta name="description" content="nginx虚拟机主机下绑定多个域名，包含a.gbicom.cn、m.ciprun.com，想实现a.gbicom.cn手机访问跳转到m.ciprun.com，如果直接写会报错跳转次数过多。
+nginx配置不支持if条件的逻辑与&amp;amp;&amp;amp;逻辑或||等逻辑运算符，而且不支持if的嵌套语法，否则会报错，可以用下面方法来实现：
+set $flag 0;
+if ($host = &amp;apos;a.g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nginx:if(&&，||)实现">
+<meta property="og:url" content="http://yoursite.com/2017/01/19/nginx-if-，-实现/index.html">
 <meta property="og:site_name" content="超人不会飞">
+<meta property="og:description" content="nginx虚拟机主机下绑定多个域名，包含a.gbicom.cn、m.ciprun.com，想实现a.gbicom.cn手机访问跳转到m.ciprun.com，如果直接写会报错跳转次数过多。
+nginx配置不支持if条件的逻辑与&amp;amp;&amp;amp;逻辑或||等逻辑运算符，而且不支持if的嵌套语法，否则会报错，可以用下面方法来实现：
+set $flag 0;
+if ($host = &amp;apos;a.g">
+<meta property="og:updated_time" content="2017-01-19T01:45:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="超人不会飞">
+<meta name="twitter:title" content="nginx:if(&&，||)实现">
+<meta name="twitter:description" content="nginx虚拟机主机下绑定多个域名，包含a.gbicom.cn、m.ciprun.com，想实现a.gbicom.cn手机访问跳转到m.ciprun.com，如果直接写会报错跳转次数过多。
+nginx配置不支持if条件的逻辑与&amp;amp;&amp;amp;逻辑或||等逻辑运算符，而且不支持if的嵌套语法，否则会报错，可以用下面方法来实现：
+set $flag 0;
+if ($host = &amp;apos;a.g">
   
     <link rel="alternative" href="/atom.xml" title="超人不会飞" type="application/atom+xml">
   
@@ -130,55 +143,119 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-nginx-if-，-实现" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/11/docker常用命令/" class="archive-article-date">
-  	<time datetime="2016-10-11T05:40:46.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/11/docker常用命令/">docker常用命令</a>
+    <h1 class="article-title" itemprop="name">
+      nginx:if(&amp;&amp;，||)实现
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>nginx虚拟机主机下绑定多个域名，包含a.gbicom.cn、m.ciprun.com，想实现a.gbicom.cn手机访问跳转到m.ciprun.com，如果直接写会报错跳转次数过多。</p>
+<p>nginx配置不支持if条件的逻辑与&amp;&amp;逻辑或||等逻辑运算符，而且不支持if的嵌套语法，否则会报错，可以用下面方法来实现：</p>
+<pre><code>set $flag 0;
+if ($host = &apos;a.gbicom.cn&apos;) {
+set $flag &quot;${flag}1&quot;;
+}
+
+if ($http_user_agent ~ &quot;(MIDP)|(WAP)&quot; ){
+        set $flag &quot;${flag}1&quot;;
+}
+
+if ($flag = &quot;011&quot;) {
+        rewrite ^(.*)$ http://m.ciprun.com$1 permanent;
+        break;
+}
+</code></pre>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2017/01/19/nginx-if-，-实现/" class="archive-article-date">
+  	<time datetime="2017-01-19T01:44:37.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-01-19</time>
+</a>
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2016/11/11/Elasticsearch/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JDBC plugin for Elasticsearch</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="nginx-if-，-实现" data-title="nginx:if(&amp;&amp;，||)实现" data-url="http://yoursite.com/2017/01/19/nginx-if-，-实现/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"acs132"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
 
     
-
 
       </div>
       <footer id="footer">
@@ -200,9 +277,9 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
