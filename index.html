@@ -132,6 +132,61 @@
       <div class="body-wrap">
         
   
+    <article id="post-nginx-rewrite-主目录跳转，子目录不跳转" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/08/nginx-rewrite-主目录跳转，子目录不跳转/">nginx rewrite 主目录跳转，子目录不跳转</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>www.gbicom.cn跳转到m.gbicom.cn<br>www.gbicom.cn/aaa不跳转</p>
+<pre><code>#根目录跳转
+location / {
+    rewrite .+ http://m.gbicom.cn permanent;
+    break;
+}
+
+#非根目录本地执行
+location ~* /.+ {
+    #省略相关内容
+}
+</code></pre>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2017/02/08/nginx-rewrite-主目录跳转，子目录不跳转/" class="archive-article-date">
+  	<time datetime="2017-02-08T05:39:18.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-02-08</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+    
+
+  
     <article id="post-nginx-if-，-实现" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
