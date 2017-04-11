@@ -4,48 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>nginx rewrite 主目录跳转，子目录不跳转 | 超人不会飞</title>
+  <title>elasticsearch删除cluster节点 | 超人不会飞</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="www.gbicom.cn跳转到m.gbicom.cnwww.gbicom.cn/aaa不跳转
-#根目录跳转
-location / {
-    rewrite .+ http://m.gbicom.cn permanent;
-    break;
-}
-
-#非根目录本地执行
-location ~* /.+ {
-    #省略相关内容
-}">
+  <meta name="description" content="移除节点    curl -XPUT localhost:9200/_cluster/settings -d ‘{      “transient” :{          “cluster.routing.allocation.exclude._ip” : “10.0.0.1”       }    }’;echo
+设置副本为0    curl -XPUT 192.168.0.2:9200/_s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nginx rewrite 主目录跳转，子目录不跳转">
-<meta property="og:url" content="http://yoursite.com/2017/02/08/nginx-rewrite-主目录跳转，子目录不跳转/index.html">
+<meta property="og:title" content="elasticsearch删除cluster节点">
+<meta property="og:url" content="http://yoursite.com/2017/04/11/elasticsearch删除cluster节点/index.html">
 <meta property="og:site_name" content="超人不会飞">
-<meta property="og:description" content="www.gbicom.cn跳转到m.gbicom.cnwww.gbicom.cn/aaa不跳转
-#根目录跳转
-location / {
-    rewrite .+ http://m.gbicom.cn permanent;
-    break;
-}
-
-#非根目录本地执行
-location ~* /.+ {
-    #省略相关内容
-}">
-<meta property="og:updated_time" content="2017-02-08T05:39:49.000Z">
+<meta property="og:description" content="移除节点    curl -XPUT localhost:9200/_cluster/settings -d ‘{      “transient” :{          “cluster.routing.allocation.exclude._ip” : “10.0.0.1”       }    }’;echo
+设置副本为0    curl -XPUT 192.168.0.2:9200/_s">
+<meta property="og:updated_time" content="2017-04-11T11:48:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nginx rewrite 主目录跳转，子目录不跳转">
-<meta name="twitter:description" content="www.gbicom.cn跳转到m.gbicom.cnwww.gbicom.cn/aaa不跳转
-#根目录跳转
-location / {
-    rewrite .+ http://m.gbicom.cn permanent;
-    break;
-}
-
-#非根目录本地执行
-location ~* /.+ {
-    #省略相关内容
-}">
+<meta name="twitter:title" content="elasticsearch删除cluster节点">
+<meta name="twitter:description" content="移除节点    curl -XPUT localhost:9200/_cluster/settings -d ‘{      “transient” :{          “cluster.routing.allocation.exclude._ip” : “10.0.0.1”       }    }’;echo
+设置副本为0    curl -XPUT 192.168.0.2:9200/_s">
   
     <link rel="alternative" href="/atom.xml" title="超人不会飞" type="application/atom+xml">
   
@@ -164,7 +137,7 @@ location ~* /.+ {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-nginx-rewrite-主目录跳转，子目录不跳转" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-elasticsearch删除cluster节点" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -174,7 +147,7 @@ location ~* /.+ {
         
   
     <h1 class="article-title" itemprop="name">
-      nginx rewrite 主目录跳转，子目录不跳转
+      elasticsearch删除cluster节点
     </h1>
   
 
@@ -182,26 +155,22 @@ location ~* /.+ {
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>www.gbicom.cn跳转到m.gbicom.cn<br>www.gbicom.cn/aaa不跳转</p>
-<pre><code>#根目录跳转
-location / {
-    rewrite .+ http://m.gbicom.cn permanent;
-    break;
-}
+        <p>移除节点<br>    curl -XPUT localhost:9200/_cluster/settings -d ‘{<br>      “transient” :{<br>          “cluster.routing.allocation.exclude._ip” : “10.0.0.1”<br>       }<br>    }’;echo</p>
+<p>设置副本为0<br>    curl -XPUT 192.168.0.2:9200/_settings -d ‘{<br>        “index” : {<br>            “number_of_replicas” : 0<br>        }<br>    }’</p>
 
-#非根目录本地执行
-location ~* /.+ {
-    #省略相关内容
-}
-</code></pre>
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2017/02/08/nginx-rewrite-主目录跳转，子目录不跳转/" class="archive-article-date">
-  	<time datetime="2017-02-08T05:39:18.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-02-08</time>
+      <a href="/2017/04/11/elasticsearch删除cluster节点/" class="archive-article-date">
+  	<time datetime="2017-04-11T11:47:07.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-04-11</time>
 </a>
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li></ul>
+	</div>
+
       
 
       <div class="clearfix"></div>
@@ -212,18 +181,9 @@ location ~* /.+ {
   
 <nav id="article-nav">
   
-    <a href="/2017/04/11/elasticsearch删除cluster节点/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          elasticsearch删除cluster节点
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/01/19/nginx-if-，-实现/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">nginx rewrite:if(&amp;&amp;，||)实现</div>
+    <a href="/2017/02/08/nginx-rewrite-主目录跳转，子目录不跳转/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">nginx rewrite 主目录跳转，子目录不跳转</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -257,7 +217,7 @@ location ~* /.+ {
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="nginx-rewrite-主目录跳转，子目录不跳转" data-title="nginx rewrite 主目录跳转，子目录不跳转" data-url="http://yoursite.com/2017/02/08/nginx-rewrite-主目录跳转，子目录不跳转/"></div>
+	<div class="ds-thread" data-thread-key="elasticsearch删除cluster节点" data-title="elasticsearch删除cluster节点" data-url="http://yoursite.com/2017/04/11/elasticsearch删除cluster节点/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
